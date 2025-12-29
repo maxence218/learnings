@@ -17,28 +17,54 @@
 </script>
 
 <template>
-  <header>
-
-  </header>
-
   <main>
     <!-- <p>je m'appelle {{ name }} et j'ai {{ age }}, j'habite a {{ ville }}</p>
     <p>Dans 10ans  j'aurais {{ age + 10 }}</p>
     <p>Mon nom en majuscule {{ name.toUpperCase() }}</p> -->
-
-    <div class="card">
-      <h1>{{ capitalize(personne.nom) }}</h1>
-      <h2>Age : {{ personne.age }}</h2>
-      <h2>Competence : {{ personne.competence.length }} </h2>
-      <h2>Email : {{ personne.email }}</h2>
-      <img :src="personne.photo_url" alt="Ma photo">
-      <p>Folow me on : <a :href="personne.linkedin_url">Mon Linkedin</a> - <a :href="personne.github_url"> Mon Github</a> </p>
-
-    </div>
+<div class="container">
+  <div class="card">
+    <h1>{{ capitalize(personne.nom) }}</h1>
+    <h2>Age : {{ personne.age }}</h2>
+    <h2>Competence : {{ personne.competence.length }} </h2>
+    <h3> {{ personne.competence.join(', ') }}</h3>
+    <h2>Email : {{ personne.email }}</h2>
+    <img :src="personne.photo_url" alt="Ma photo">
+    <p>Folow me on : <a :href="personne.linkedin_url">Mon Linkedin</a> - <a :href="personne.github_url"> Mon Github</a> </p>
+  </div>
+</div>
   </main>
 </template>
 
 <style scoped>
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
 
+.card {
+  max-width: 400px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background: white;
+}
 
+img {
+  width: 150px;
+  border-radius: 50%;
+  margin: 1rem 0;
+}
+
+a {
+  color: #42b883;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
 </style>

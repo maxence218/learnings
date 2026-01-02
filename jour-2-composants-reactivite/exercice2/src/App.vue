@@ -5,10 +5,10 @@
 </script>
 
 <template>
-<Compteur/>
-
-  <li v-for="(message, index) in liste">{{ index }} - {{ message }}</li>
-
+  <Compteur/>
+  <li v-for="(message, index) in liste" :key="index">{{ index + 1 }} - {{ message }}</li>
 </template>
 
-<style scoped></style>
+<style scoped>
+
+</style>

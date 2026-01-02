@@ -6,9 +6,9 @@
 
 <template>
 <Compteur/>
-<ul>
-  <li v-for="message in liste"> {{ message }}</li>
-</ul>
+
+  <li v-for="(message, index) in liste">{{ index }} - {{ message }}</li>
+
 </template>
 
 <style scoped></style>
